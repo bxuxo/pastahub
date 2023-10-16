@@ -1,0 +1,6 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Rewrite rule to pass page name as a parameter
+RewriteRule ^([^/]+)/?$ index.php?page_name=$1 [QSA,L]
