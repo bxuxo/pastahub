@@ -1,3 +1,11 @@
+:root {
+    --textCol: #130E01;
+    --bgCol: #FFFAEB;
+    --primaryCol: #FF8400;
+    --secondaryCol: #FFF5D6;
+    --accentCol: #CF4307;
+}
+
 * {
     font-size: 18px;
     box-sizing: border-box;
@@ -6,6 +14,7 @@
 }
 
 body {
+    background-color: var(--bgCol);
     height: 100vh;
 }
 
@@ -16,11 +25,12 @@ main {
 }
 
 .header {
-    background-color: red;
+    background-color: var(--bgCol);
+    border-bottom: 1px solid var(--primaryCol);
     height: 100px;
 }
 
 .page-content-wrapper {
     flex: 1;
-    overflow-y: scroll;
+    overflow: scroll;
 }
