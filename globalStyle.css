@@ -1,6 +1,8 @@
 :root {
     --col1: #FFFAEB;
     --col2: #1E1E1E;
+    --col3: #3E3939;
+    --col4: #B86E21;
 }
 
 * {
@@ -13,6 +15,7 @@
 body {
     background-color: var(--col1);
     height: 100vh;
+    width: 100vw;
 }
 
 main {
@@ -77,4 +80,77 @@ main {
 .page-content-wrapper {
     flex: 1;
     overflow: scroll;
+}
+
+/* Silvja dizains below don't delete. */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cen {
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.header {
+    & a {
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+        color: var(--col1);
+        width: calc(100% / 4);
+    }
+    & a > img {
+        aspect-ratio: 1 / 1;
+        max-width: calc(100% / 4);
+    }
+}
+
+.regDisplay {
+    height: calc(100% - 110px);
+    /* width: 100vw; */
+}
+
+label {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: flex-start;
+}
+
+input {
+    font-size: 36px;
+    width: calc(100% / 3);
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+input[type=text], input[type=password] {
+    background-color: var(--col4);
+    color: var(--col1);
+}
+
+input[type=button] {
+    color: var(--col1);
+    background-color: var(--col3);
+}
+
+@media screen and (max-width: 600px) {
+    label {
+        width: calc(100vw / 1.2);
+    }
+    input {
+        width: calc(100vw / 1.2);
+        height: 3rem;
+    }
+    body{
+        width: 100vw;
+    }
 }
