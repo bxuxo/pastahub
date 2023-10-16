@@ -19,8 +19,8 @@
                 </span>
 
                 <span>
-                    <a>Login</a>
-                    <a>Register</a>
+                    <a href="./login.php">Ieiet</a>
+                    <a href="./register.php">Reģistrēties</a>
                 </span>
 
                 <span>
