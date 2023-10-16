@@ -1,9 +1,6 @@
 :root {
-    --textCol: #130E01;
-    --bgCol: #FFFAEB;
-    --primaryCol: #FF8400;
-    --secondaryCol: #FFF5D6;
-    --accentCol: #CF4307;
+    --col1: #FFFAEB;
+    --col2: #1E1E1E;
 }
 
 * {
@@ -14,7 +11,7 @@
 }
 
 body {
-    background-color: var(--bgCol);
+    background-color: var(--col1);
     height: 100vh;
 }
 
@@ -25,9 +22,19 @@ main {
 }
 
 .header {
-    background-color: var(--bgCol);
-    border-bottom: 1px solid var(--primaryCol);
+    background-color: var(--col2);
     height: 100px;
+
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.header > span {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--col1);
 }
 
 .page-content-wrapper {
