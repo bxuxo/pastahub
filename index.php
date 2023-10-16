@@ -14,9 +14,18 @@
     <body>
         <main>
             <header class="header">
-                <span>Pasta HUB</span>
-                <span></span>
-                <span></span>
+                <span>
+                    <p>Pasta HUB</p>
+                </span>
+
+                <span>
+                    <a>Login</a>
+                    <a>Register</a>
+                </span>
+
+                <span>
+                    <img src="./media/logo.png">
+                </span>
             </header>
 
             <section class="page-content-wrapper">
