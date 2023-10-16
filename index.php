@@ -15,6 +15,8 @@
         <main>
             <header class="header">
                 <span>Pasta HUB</span>
+                <span></span>
+                <span></span>
             </header>
 
             <section class="page-content-wrapper">
