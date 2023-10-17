@@ -82,6 +82,27 @@ main {
     overflow: scroll;
 }
 
+
+.landing-page-inner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.landing-page-inner > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-page-inner > div > h1 {
+    font-size: 6em;
+}
+
+.landing-page-inner > div > p {
+    font-size: 2em;
+}
+
 /* Silvja dizains below don't delete. */
 
 .flex {
