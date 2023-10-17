@@ -15,13 +15,17 @@
 body {
     background-color: var(--col1);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 main {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+header {
+    width: 100vw;
 }
 
 .header {
@@ -83,6 +87,12 @@ main {
 
 /* Silvja dizains below don't delete. */
 
+main, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -113,6 +123,7 @@ main {
 
 .regDisplay {
     height: calc(100% - 110px);
+    /* width: 50%; */
     /* width: 100vw; */
 }
 
@@ -154,6 +165,7 @@ input[type=button] {
     }
     .header {
         width: 100vw;
+        /* padding: 10px 50px; */
         & span > a {
             width: fit-content;
         }
