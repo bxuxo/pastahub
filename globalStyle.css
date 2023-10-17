@@ -42,10 +42,6 @@ header {
     justify-content: center;
 }
 
-/* Pasta HUB */
-/* .header > span:nth-of-type(1) {
-} */
-
 .header > span:nth-of-type(1) > a {
     font-weight: bold;
     font-style: italic;
@@ -198,9 +194,9 @@ input[type=button] {
         /* font-size: 14px; */
         font-size: 80%;
     }
-    .header > span:nth-of-type(1) > p {
+    .header > span:nth-of-type(1) > a {
         /* font-size: 14px; */
-        font-size: 80%;
+        font-size: 110%;
         margin-right: 100%;
         /* margin-right: 1rem; */
     }
