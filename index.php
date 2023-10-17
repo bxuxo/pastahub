@@ -29,7 +29,12 @@
             </header>
 
             <section class="page-content-wrapper">
-                
+                <div class="landing-page-inner">
+                    <div>
+                        <h1>Pasta HUB</h1>
+                        <p>The only pasta market you will ever need. Join us today.</p>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
