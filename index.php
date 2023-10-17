@@ -15,7 +15,7 @@
         <main>
             <header class="header">
                 <span>
-                    <p>Pasta HUB</p>
+                    <a href="./index.php">Pasta HUB</a>
                 </span>
 
                 <span>

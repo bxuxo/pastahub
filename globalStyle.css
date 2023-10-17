@@ -43,12 +43,13 @@ main {
 /* .header > span:nth-of-type(1) {
 } */
 
-.header > span:nth-of-type(1) > p {
+.header > span:nth-of-type(1) > a {
     font-weight: bold;
     font-style: italic;
     font-size: 30px;
     color: var(--col1);
     margin-right: auto;
+    text-decoration: none;
 }
 
 /* Actions */
@@ -87,20 +88,22 @@ main {
     display: flex;
     justify-content: center;
     padding: 20px;
-}
 
-.landing-page-inner > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.landing-page-inner > div > h1 {
-    font-size: 6em;
-}
+    & > div {
+        & > h1 {
+            font-size: 6em;
+        }
 
-.landing-page-inner > div > p {
-    font-size: 2em;
+        & > p {
+            font-size: 2em;
+        }
+    }
 }
 
 /* Silvja dizains below don't delete. */
