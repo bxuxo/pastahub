@@ -25,9 +25,9 @@
         </header>
         <div class="flex cen col regDisplay">
         <label>Lietotājvārds:</label>
-            <input type="text" name="" id="">
+            <input type="text" name="" id="" maxlength="15">
             <label>Parole:</label>
-            <input type="password" name="" id="">
+            <input type="password" name="" id="" maxlength="30">
             <input type="button" value="Ieiet">
         </div>
     </main>
