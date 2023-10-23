@@ -1,5 +1,11 @@
 <?php
 
+include './core/database.php';
+
+$user = new user( );
+
+// echo $user->register('rs6', 'rs6rs6rs6');
+
 ?>
 
 <!DOCTYPE html>
