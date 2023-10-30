@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 // if(isset($_FILES["pictures"])){
 //     foreach ($_FILES["pictures"]["error"] as $key => $error) {
 //         if ($error == UPLOAD_ERR_OK) {
@@ -11,13 +10,11 @@
 //         }
 //     }
 // }
-=======
 
 include 'core/database.php';
 $_L = new listing( );
 $_L->new("", 1.1, true, "");
 
->>>>>>> 1c64d92ca59a642a4ae8a5f85ef6c2c646b595d8
 ?>
 
 <!DOCTYPE html>
@@ -61,26 +58,16 @@ $_L->new("", 1.1, true, "");
                 <option value="Tips">Tips</option>
             </select>
 
-<<<<<<< HEAD
-            <form method="post" enctype="multipart/form-data">
-                <label for="file-upload" class="custom-file-upload">
-                    Izvēlieties bildi
-                </label>
-                <input id="file-upload" type="file" onchange="getFileData(this);" />
-                <button>Pievienot</button>
-            </form>
-        </div>
-=======
             <textarea name="description" cols="30" rows="10" placeholder="Apraksts"></textarea>
 
             <label>Bilde:</label>
+
             <label for="file-upload" class="custom-file-upload">
                 Izvēlieties bildi
             </label>
-            <input id="file-upload" type="file"/>
+            <input id="file-upload" type="file" onchange="getFileData(this);" />
             <button>Pievienot</button>
         </form>
->>>>>>> 1c64d92ca59a642a4ae8a5f85ef6c2c646b595d8
     </main>
 </body>
 </html>
