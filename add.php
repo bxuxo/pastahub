@@ -1,6 +1,11 @@
 <?php
 
+include 'core/database.php';
+$_L = new listing( );
+$_L->new("", 1.1, true, "");
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +28,26 @@
                 <img src="./media/logo.png">
             </span>
         </header>
-        <div class="flex cen col regDisplay">
-            <label>Nosaukums:</label>
-            <input type="text" name="" id="" maxlength="15">
+        <form class="flex cen col regDisplay" method="post" enctype="multipart/form-data">
+            <label>Virsraksts:</label>
+            <input type="text" name="title" maxlength="15">
+
             <label>Cena:</label>
-            <input type="number" name="" id="" step="0.01">
-            <select name="" id="">
+            <input type="number" name="price" step="0.01">
+
+            <select name="type">
                 <option value="Tips">Tips</option>
             </select>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Apraksts"></textarea>
-            <label>Bilde:</label>
 
+            <textarea name="description" cols="30" rows="10" placeholder="Apraksts"></textarea>
+
+            <label>Bilde:</label>
             <label for="file-upload" class="custom-file-upload">
                 Izvēlieties bildi
             </label>
             <input id="file-upload" type="file"/>
             <button>Pievienot</button>
-        </div>
+        </form>
     </main>
 </body>
 </html>
