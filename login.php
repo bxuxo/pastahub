@@ -28,7 +28,7 @@
             <input type="text" name="" id="" maxlength="15">
             <label>Parole:</label>
             <input type="password" name="" id="" maxlength="30">
-            <input type="button" value="Ieiet">
+            <button>Ieiet</button>
         </div>
     </main>
 </body>
