@@ -17,7 +17,7 @@ class user extends database {
 
     function login(string $username, string $password): int {
         $sql = "select * from users where Username=? and Password=?";
-        $result = $this->db->execute_query($sql, [ $username, $password ])->fetch_all(MYSQLI_ASSOC);
+        $result = $this->db->execute_query($sql, [ $username, password_hash($password, PASSWORD_ARGON2I) ])->fetch_all(MYSQLI_ASSOC);
 
         if (sizeof($result) == 0)
             return -1;
@@ -41,7 +41,7 @@ class user extends database {
             return self::REGISTER_MSG_PASSWORD_SHORT;
 
         $sql = "insert into users (Username, Password) values (?, ?)";
-        $result = $this->db->execute_query($sql, [ $username, $password ]);
+        $result = $this->db->execute_query($sql, [ $username, password_hash($password, PASSWORD_ARGON2I) ]);
 
         return self::REGISTER_MSG_SUCCESS;
     }
