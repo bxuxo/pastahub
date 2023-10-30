@@ -16,13 +16,16 @@ class user extends database {
     const REGISTER_MSG_SUCCESS = "User registered successfully";
 
     function login(string $username, string $password): int {
-        $sql = "select * from users where Username=? and Password=?";
-        $result = $this->db->execute_query($sql, [ $username, password_hash($password, PASSWORD_ARGON2I) ])->fetch_all(MYSQLI_ASSOC);
-
+        $sql = "select Password, User_ID from users where Username=?";
+        $result = $this->db->execute_query($sql, [ $username ])->fetch_all(MYSQLI_ASSOC);
         if (sizeof($result) == 0)
             return -1;
 
-        return $result[0]["User_ID"];
+        if (password_verify($password, $result[0]["Password"])) {
+            return $result[0]["User_ID"];
+        }
+
+        return -1;
     }
 
     private function user_exists(string $username): bool {
