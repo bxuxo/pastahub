@@ -223,10 +223,6 @@ input[type="file"] {
     border-radius: 0.2rem;
 }
 
-.hide {
-    display: none;
-}
-
 input[type=text], input[type=password], input[type=number] {
     background-color: var(--col4);
     color: var(--col1);
