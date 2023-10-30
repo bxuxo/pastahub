@@ -200,6 +200,21 @@ select {
     color: var(--col1);
 }
 
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    border: none;
+    background-color: var(--col4);
+    color: var(--col1);
+    border-radius: 0.2rem;
+}
+
 input[type=text], input[type=password], input[type=number] {
     background-color: var(--col4);
     color: var(--col1);

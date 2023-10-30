@@ -33,7 +33,11 @@
             </select>
             <textarea name="" id="" cols="30" rows="10" placeholder="Apraksts"></textarea>
             <label>Bilde:</label>
-            <input type="file" name="" id="">
+            <!-- <input type="file" name="" id=""> -->
+            <label for="file-upload" class="custom-file-upload">
+                Izvēlieties bildi
+            </label>
+            <input id="file-upload" type="file"/>
             <button>Pievienot</button>
         </div>
     </main>
