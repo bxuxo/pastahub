@@ -157,7 +157,7 @@ label {
     justify-content: flex-start;
 }
 
-input {
+input, button {
     font-size: 36px;
     width: calc(100% / 3);
     height: 3rem;
@@ -171,7 +171,8 @@ input[type=text], input[type=password] {
     color: var(--col1);
 }
 
-input[type=button] {
+button {
+    cursor: pointer;
     color: var(--col1);
     background-color: var(--col3);
 }
