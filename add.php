@@ -33,7 +33,7 @@
             </select>
             <textarea name="" id="" cols="30" rows="10" placeholder="Apraksts"></textarea>
             <label>Bilde:</label>
-            <input type="text" name="image" id="">
+            <input type="file" name="" id="">
             <button>Pievienot</button>
         </div>
     </main>
