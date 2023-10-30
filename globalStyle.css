@@ -167,7 +167,7 @@ label {
 
 input, button {
     font-size: 36px;
-    width: calc(100% / 3);
+    width: calc(100vw / 3);
     height: 3rem;
     border: none;
     border-radius: 5px;
@@ -200,6 +200,13 @@ select {
     color: var(--col1);
 }
 
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 input[type="file"] {
     display: none;
 }
@@ -208,11 +215,16 @@ input[type="file"] {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: calc(100vw / 3);
     height: 3rem;
     border: none;
     background-color: var(--col4);
     color: var(--col1);
     border-radius: 0.2rem;
+}
+
+.hide {
+    display: none;
 }
 
 input[type=text], input[type=password], input[type=number] {
