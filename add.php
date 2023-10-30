@@ -1,9 +1,23 @@
 <?php
+<<<<<<< HEAD
+// if(isset($_FILES["pictures"])){
+//     foreach ($_FILES["pictures"]["error"] as $key => $error) {
+//         if ($error == UPLOAD_ERR_OK) {
+//             $tmp_name = $_FILES["pictures"]["tmp_name"][$key];
+//             // basename() may prevent filesystem traversal attacks;
+//             // further validation/sanitation of the filename may be appropriate
+//             $name = basename($_FILES["pictures"]["name"][$key]);
+//             echo $name;
+//         }
+//     }
+// }
+=======
 
 include 'core/database.php';
 $_L = new listing( );
 $_L->new("", 1.1, true, "");
 
+>>>>>>> 1c64d92ca59a642a4ae8a5f85ef6c2c646b595d8
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +26,17 @@ $_L->new("", 1.1, true, "");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="globalStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Pasta Hub Login</title>
 </head>
 <body>
+    <script>
+        function getFileData(myFile){
+            var file = myFile.files[0];  
+            var filename = file.name;
+            $('.custom-file-upload').html(filename);
+        }
+    </script>
     <main>
         <header class="header">
             <span>
@@ -39,6 +61,16 @@ $_L->new("", 1.1, true, "");
                 <option value="Tips">Tips</option>
             </select>
 
+<<<<<<< HEAD
+            <form method="post" enctype="multipart/form-data">
+                <label for="file-upload" class="custom-file-upload">
+                    Izvēlieties bildi
+                </label>
+                <input id="file-upload" type="file" onchange="getFileData(this);" />
+                <button>Pievienot</button>
+            </form>
+        </div>
+=======
             <textarea name="description" cols="30" rows="10" placeholder="Apraksts"></textarea>
 
             <label>Bilde:</label>
@@ -48,6 +80,7 @@ $_L->new("", 1.1, true, "");
             <input id="file-upload" type="file"/>
             <button>Pievienot</button>
         </form>
+>>>>>>> 1c64d92ca59a642a4ae8a5f85ef6c2c646b595d8
     </main>
 </body>
 </html>
