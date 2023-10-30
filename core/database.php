@@ -50,4 +50,25 @@ class user extends database {
     }
 }
 
+class listing extends database {
+    // returns result
+    function new(string $title, float $price, bool $isCool, string $description) {
+        $owner_id = @$_COOKIE["user_id"];
+        if (!isset($owner_id)) {
+            return "Unknown error."; // its actually known hehe
+        }
+
+        $sql = "
+            insert into listings
+            (Title, Price, IS_COOL, Description, img_path, created_at, Owner_ID)
+            values
+            (?, ?, ?, ?, ?, ?, ?)
+        ";
+
+        $created_at = time( );
+
+        print_r($_FILES);
+    }
+}
+
 ?>
