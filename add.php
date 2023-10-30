@@ -42,9 +42,11 @@ $_L->new("", 1.1, true, "");
             <textarea name="description" cols="30" rows="10" placeholder="Apraksts"></textarea>
 
             <label>Bilde:</label>
-            <input type="file" name="image">
-
-            <button name="add_btn">Pievienot</button>
+            <label for="file-upload" class="custom-file-upload">
+                Izvēlieties bildi
+            </label>
+            <input id="file-upload" type="file"/>
+            <button>Pievienot</button>
         </form>
     </main>
 </body>
