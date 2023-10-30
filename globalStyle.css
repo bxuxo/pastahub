@@ -153,7 +153,7 @@ label {
     justify-content: flex-start;
 }
 
-input {
+input, button {
     font-size: 36px;
     width: calc(100% / 3);
     height: 3rem;
@@ -162,7 +162,33 @@ input {
     margin: 0.5rem;
 }
 
-input[type=text], input[type=password] {
+button {
+    background-color: var(--col3);
+    color: var(--col1);
+}
+
+textarea {
+    resize: none;
+    width: calc(100% / 3);
+    border: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+    background-color: var(--col4);
+    color: var(--col1);
+}
+
+select {
+    font-size: 26px;
+    resize: none;
+    width: calc(100% / 3);
+    border: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+    background-color: var(--col2);
+    color: var(--col1);
+}
+
+input[type=text], input[type=password], input[type=number] {
     background-color: var(--col4);
     color: var(--col1);
 }
@@ -180,8 +206,15 @@ input[type=button] {
         width: calc(100vw / 1.2);
         height: 3rem;
     }
+    textarea, select{
+        width: calc(100vw / 1.2);
+    }
     body{
         width: 100vw;
+    }
+    button {
+        width: calc(100vw / 1.2);
+        font-size: 24px;
     }
     .header {
         width: 100vw;
