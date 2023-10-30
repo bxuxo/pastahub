@@ -24,11 +24,17 @@
             </span>
         </header>
         <div class="flex cen col regDisplay">
-        <label>Lietotājvārds:</label>
+            <label>Nosaukums:</label>
             <input type="text" name="" id="" maxlength="15">
-            <label>Parole:</label>
-            <input type="password" name="" id="" maxlength="30">
-            <input type="button" value="Ieiet">
+            <label>Cena:</label>
+            <input type="number" name="" id="" step="0.01">
+            <select name="" id="">
+                <option value="Tips">Tips</option>
+            </select>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Apraksts"></textarea>
+            <label>Bilde:</label>
+            <input type="text" name="image" id="">
+            <button>Atjaunot</button>
         </div>
     </main>
 </body>
