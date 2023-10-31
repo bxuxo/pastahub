@@ -45,8 +45,8 @@ $_L->new("", 1.1, true, "");
             <label for="file-upload" class="custom-file-upload">
                 Izvēlieties bildi
             </label>
-            <input id="file-upload" type="file"/>
-            <button>Pievienot</button>
+            <input id="file-upload" name="image" type="file"/>
+            <button name="add_btn">Pievienot</button>
         </form>
     </main>
 </body>

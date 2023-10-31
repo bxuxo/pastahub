@@ -28,6 +28,11 @@ class user extends database {
         return -1;
     }
 
+    function logout( ) {
+        unset($_COOKIE['user_id']); 
+        setcookie('user_id', '', -1, '/'); 
+    }
+
     private function user_exists(string $username): bool {
         $sql = "select User_ID from users where Username=?";
         $result = $this->db->execute_query($sql, [ $username ])->fetch_all(MYSQLI_ASSOC);
@@ -47,6 +52,13 @@ class user extends database {
         $result = $this->db->execute_query($sql, [ $username, password_hash($password, PASSWORD_ARGON2I) ]);
 
         return self::REGISTER_MSG_SUCCESS;
+    }
+
+    function user_id( ) {
+        if (array_key_exists("user_id", $_COOKIE))
+            return $_COOKIE["user_id"];
+
+        return -1;
     }
 }
 
