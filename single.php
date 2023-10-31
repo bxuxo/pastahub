@@ -20,8 +20,16 @@ if(isset($_GET['id'])){
                 </span>
 
                 <span>
-                    <a href="./login.php">Ieiet</a>
-                    <a href="./register.php">Reģistrēties</a>
+                    <?php if ($user->user_id() == -1): ?>
+                        <a href="./login.php">Ieiet</a>
+                        <a href="./register.php">Reģistrēties</a>
+                    <?php endif; ?>
+                    
+
+                    <?php if ($user->user_id() != -1): ?>
+                        <a href="./add.php">Pievienot</a>
+                        <a href="./login.php">Izrakstīties</a>
+                    <?php endif; ?>
                 </span>
 
                 <span>
