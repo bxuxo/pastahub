@@ -37,6 +37,11 @@ $user = new user( );
             <section class="page-content-wrapper">
                 <div class="landing-page-inner">
                     <div>
+                        <select name="" id="" class="type-sel">
+                            <option value="Type">Tips</option>
+                            <option value="price">Cena</option>
+                            <option value="Title">Nosaukums</option>
+                        </select>
                         <h1>Pasta HUB</h1>
                         <p>The only pasta market you will ever need. Join us today.</p>
                     </div>
