@@ -199,6 +199,17 @@ select {
     background-color: var(--col2);
     color: var(--col1);
 }
+.type-sel {
+    font-size: 26px;
+    resize: none;
+    width: 26rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+    background-color: var(--col2);
+    color: var(--col1);
+}
 
 form{
     display: flex;
@@ -235,6 +246,12 @@ button {
 }
 
 @media screen and (max-width: 600px) {
+    .type-sel {
+        width: calc(100vw / 1.2);
+    }
+    .custom-file-upload {
+        width: calc(100vw / 1.2);
+    }
     .box {
         margin-top: 2rem;
         width: 100%;
