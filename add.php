@@ -12,8 +12,31 @@
 // }
 
 include 'core/database.php';
-$_L = new listing( );
-$_L->new("", 1.1, true, "");
+
+$user = new user( );
+
+$pasta_types = $user->get_pasta_types( );
+
+$result = "";
+if (array_key_exists("add_btn", $_POST)) {
+
+    $title = $_POST["title"];
+    $price = $_POST["price"];
+    $description = $_POST["description"];
+    $type = $_POST["type"];
+
+    if (empty( $title ) || empty( $price ) || empty( $description )) {
+        $result = "You must fill out all fields!";
+    } else {
+        $result = $user->new_listing(
+            $_POST["title"],
+            $_POST["price"],
+            false,
+            $_POST["description"],
+            $_POST["type"]
+        );
+    }
+}
 
 ?>
 
@@ -23,17 +46,9 @@ $_L->new("", 1.1, true, "");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="globalStyle.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Pasta Hub Login</title>
 </head>
 <body>
-    <script>
-        function getFileData(myFile){
-            var file = myFile.files[0];  
-            var filename = file.name;
-            $('.custom-file-upload').html(filename);
-        }
-    </script>
     <main>
         <header class="header">
             <span>
@@ -56,6 +71,7 @@ $_L->new("", 1.1, true, "");
             </span>
         </header>
         <form class="flex cen col regDisplay" method="post" enctype="multipart/form-data">
+            <p><?= $result ?></p>
             <label>Virsraksts:</label>
             <input type="text" name="title" maxlength="15">
 
@@ -63,7 +79,9 @@ $_L->new("", 1.1, true, "");
             <input type="number" name="price" step="0.01">
 
             <select name="type">
-                <option value="Tips">Tips</option>
+                <?php foreach ($pasta_types as $type) { ?>
+                        <option value="<?= $type["pastatype_ID"] ?>"><?= $type["Type"] ?></option>
+                <?php } ?>
             </select>
 
             <textarea name="description" cols="30" rows="10" placeholder="Apraksts"></textarea>
@@ -77,5 +95,10 @@ $_L->new("", 1.1, true, "");
             <button name="add_btn">Pievienot</button>
         </form>
     </main>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 </html>

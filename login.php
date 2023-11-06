@@ -48,5 +48,10 @@ if (array_key_exists("login_btn", $_POST)) {
             <button name="login_btn">Ieiet</button>
         </form>
     </main>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 </html>

@@ -8,6 +8,11 @@ class database {
         if ($this->db->connect_errno)
             die($this->db->connect_error);
     }
+
+    function get_pasta_types( ) {
+        $sql = "select * from pasta_types";
+        return $this->db->query($sql)->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 class user extends database {
@@ -60,26 +65,42 @@ class user extends database {
 
         return -1;
     }
-}
 
-class listing extends database {
-    // returns result
-    function new(string $title, float $price, bool $isCool, string $description) {
+    function new_listing(string $title, float $price, bool $isCool, string $description, int $pastaTypeId) {
         $owner_id = @$_COOKIE["user_id"];
         if (!isset($owner_id)) {
-            return "Unknown error."; // its actually known hehe
+            return "Unknown error"; // its actually known hehe
         }
 
         $sql = "
             insert into listings
-            (Title, Price, IS_COOL, Description, img_path, created_at, Owner_ID)
+            (Title, Price, IS_COOL, Description, img_path, created_at, Owner_ID, PastaType_ID)
             values
-            (?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?, ?, ?)
         ";
 
         $created_at = time( );
 
-        print_r($_FILES);
+        $img = $_FILES["image"];
+
+        $name = $img["name"];
+        $ext = explode(".", $name)[1];
+        // echo $ext;
+        if (!$ext)
+            return "Invalid file";
+
+        $allowedTypes = ["png", "jpg", "jpeg", "webp"];
+        if (!in_array($ext, $allowedTypes))
+            return "Invalid file type";
+
+        $uniqueName = uniqid( );
+        $newPath = "./core/uploads/$uniqueName.$ext";
+        if (!move_uploaded_file($img["tmp_name"], $newPath))
+            return "File upload error";
+
+        $this->db->execute_query($sql, [ $title, $price, 0, $description, $newPath, $created_at, $owner_id, $pastaTypeId ]);
+
+        return "New listing created successfully";
     }
 }
 
